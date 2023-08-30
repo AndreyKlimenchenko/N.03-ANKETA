@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ANKETA</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <p id="result"></p>
+    <script>
+      let firstName = prompt("Ваше имя?").trim();
+      while (!firstName) {
+        firstName = prompt("Ваше имя?").trim();
+      }
+      let middleName = prompt("Ваше отчество?").trim();
+      while (!middleName) {
+        middleName = prompt("Ваше отчество?").trim();
+      }
+      let lastName = prompt("Ваша фамилия?").trim();
+      while (!lastName) {
+        lastName = prompt("Ваша фамилия?").trim();
+      }
+      const fullName = `${lastName} ${firstName} ${middleName}`;
+
+      let age = Number(prompt("Ваш возраст?"));
+      while (isNaN(age) || !(age > 0 && age <= 100)) {
+        age = Number(prompt("Ваш возраст?"));
+      }
+      const ageInDays = age * 365;
+
+      const isMale = confirm("ваш пол - мужской?");
+      const sex = isMale ? "мужской" : "женский";
+
+      const retiredAge = isMale ? 60 : 55;
+
+      const isRetired = age >= retiredAge ? "да" : "нет";
+
+      const ageAfter = age + 5;
+
+      const fullInfo = `
+              ФИО: ${fullName}
+              ваш возраст в годах: ${age}
+              ваш возраст в днях: ${ageInDays}
+              через 5 лет вам будет: ${ageAfter}
+              ваш пол: ${sex}
+              вы на пенсии: ${isRetired}
+          `;
+
+      alert(fullInfo);
+
+      const result = document.getElementById("result");
+      result.innerText = `
+              РЕЗУЛЬТАТ
+              ${fullInfo}
+              `;
+    </script>
+  </body>
 </html>
