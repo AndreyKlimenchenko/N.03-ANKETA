@@ -8,17 +8,19 @@
   <body>
     <p id="result"></p>
     <script>
-      let firstName = prompt("Ваше имя?").trim();
+      let firstName = prompt("Ваше имя?")?.trim();
+
+      
       while (!firstName) {
-        firstName = prompt("Ваше имя?").trim();
+        firstName = prompt("Ваше имя?")?.trim();
       }
-      let middleName = prompt("Ваше отчество?").trim();
+      let middleName = prompt("Ваше отчество?")?.trim();
       while (!middleName) {
-        middleName = prompt("Ваше отчество?").trim();
+        middleName = prompt("Ваше отчество?")?.trim();
       }
-      let lastName = prompt("Ваша фамилия?").trim();
+      let lastName = prompt("Ваша фамилия?")?.trim();
       while (!lastName) {
-        lastName = prompt("Ваша фамилия?").trim();
+        lastName = prompt("Ваша фамилия?")?.trim();
       }
       const fullName = `${lastName} ${firstName} ${middleName}`;
 
